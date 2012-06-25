@@ -1,0 +1,16 @@
+{
+    "contents" : "HIPC Lyoplate geo data\n-----------------------\n\n```{r load-libraries}\nlibrary(ggplot2)\nlibrary(ggmap)\nlibrary(mapdata)\nlibrary(mapproj)\nlibrary(RgoogleMaps)\nlibrary(grid)\n#Set some knitr options\nopts_knit$set(progress = TRUE, verbose = TRUE)\nopts_chunk$set(cache=FALSE, fig.width=12, echo=TRUE, eval=TRUE, message=TRUE, warning=TRUE)\n```\n\n```{r read-center-info}\ncenters<-read.csv(\"centers.csv\")\n```\n\n```{r uk-map}\n#load us map data\npng(\"../figures/HIPC-uk-map.png\",bg=\"transparent\",width=720,height=720,pointsize=16)\nmap <- get_map(location=\"manchester\",maptype = \"roadmap\", source=\"google\",zoom=6,color=\"bw\")\np<-ggmap(map)+opts(panel.grid.major=theme_blank(),panel.grid.minor=theme_blank(),axis.text.y = theme_blank(),axis.ticks=theme_blank(),axis.text.x = theme_blank(),axis.title.x = theme_blank(),axis.title.y = theme_blank(),legend.position = \"none\",plot.background = theme_rect(fill = \"transparent\",colour = NA),plot.margin = unit(c(0,0,-1,-1), \"lines\"))\np+geom_point(data=centers, aes(x=long, y=lat,color=HIPC),alpha=.9,size=5)+ geom_text( data=centers, hjust=0.5, vjust=-1, aes(x=long, y=lat, label=Center,color=HIPC), size=7,alpha=1)+scale_color_manual(values = c(\"#1F78B4\",\"#E31A1C\"))\ndev.off()\n```\n\n```{r usa-map}\npng(\"../figures/HIPC-usa-map.png\",bg=\"transparent\",width=720,height=720,pointsize=16)\n#load us map data\nmap <- get_map(location=\"kansas\",maptype = \"roadmap\", source=\"google\",zoom=4,color=\"bw\")\np<-ggmap(map)+opts(panel.grid.major=theme_blank(),panel.grid.minor=theme_blank(),axis.text.y = theme_blank(),axis.ticks=theme_blank(),axis.text.x = theme_blank(),axis.title.x = theme_blank(),axis.title.y = theme_blank(),legend.position = \"none\",plot.background = theme_rect(fill = \"transparent\",colour = NA),plot.margin = unit(c(0,0,-1,-1), \"lines\"))\np+geom_point(data=centers, aes(x=long, y=lat,color=HIPC),alpha=.9,size=5)+ geom_text( data=centers, hjust=0.5, vjust=-1, aes(x=long, y=lat, label=Center,color=HIPC), size=7,alpha=1)+scale_color_manual(values = c(\"#1F78B4\",\"#E31A1C\"))\ndev.off()\n```\n\n\n",
+    "created" : 1339964741763.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3192143105",
+    "id" : "167A831E",
+    "lastKnownWriteTime" : 1340052078,
+    "path" : "~/Dropbox/Presentations/HIPC/R/generateFigures.rmd",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_markdown"
+}

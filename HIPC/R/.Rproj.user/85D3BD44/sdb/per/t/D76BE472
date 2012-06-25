@@ -1,0 +1,16 @@
+{
+    "contents" : "Center,City,PI,lat,long,Available,HIPC\nNIH,Bethesda,McCoy,39.30,-76.63,No,Yes\nU of Miami,Miami,Blomberg,25.79,-80.22,Yes,No\nStanford,Stanford,Maecker,37.42,-122.16,Yes,Yes\nYale,New Haven,Hafler,41.31,-72.92,No,Yes\nKings College,London,Frank Nestle,51.50,-0.13,No,No\nCambridge University,Cambridge,John Todd,52.20,0.13,No,No\nUCLA,Los Angeles,Elaine Reed,34.05,-118.24,No,No\nU of Sussex,Sussex,Florian Kern,50.92,-0.45,No,No\nBaylor,Dallas,Gerlinde Obermoser,32.80,-96.77,No,No",
+    "created" : 1339964861140.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1836654121",
+    "id" : "D76BE472",
+    "lastKnownWriteTime" : 1340034884,
+    "path" : "~/Dropbox/Presentations/HIPC/R/centers.csv",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "text"
+}

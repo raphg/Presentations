@@ -1,0 +1,16 @@
+{
+    "contents" : "library(flowClust)\n\n# Two peaks\ny<-SimulateMixture(10000, c(.7,.3), c(2,6), c(1,2), nu=10)\ndens<-density(y)\nplot(dens)\nx.valley<-findValley(dens,stepSize=1,n=10,tol.in=.Machine$double.eps,tol.out=.001)\nabline(v=x.valley,col=2)\n\n# 1 peak with a minor hump\ny<-SimulateMixture(10000, c(.7,.3), c(2,5), c(1,2), nu=10)\ndens<-density(y)\nplot(dens)\nx.valley<-findValley(dens,stepSize=1,n=10,tol.in=.Machine$double.eps,tol.out=.001)\nabline(v=x.valley,col=2)\n\n# 2 peaks with a minor hump\ny<-SimulateMixture(10000, c(.5,.3,.2), c(2,5,7), c(1,1,1), nu=10)\ndens<-density(y)\nplot(dens)\nx.valley<-findValley(dens,stepSize=1,n=10,tol.in=.Machine$double.eps,tol.out=.001)\nabline(v=x.valley,col=2)\n\n\n# 3 peaks\ny<-SimulateMixture(10000, c(.5,.3,.2), c(2,5,8), c(1,1,1), nu=10)\ndens<-density(y)\nplot(dens)\nx.valley<-findValley(dens,stepSize=1,n=10,tol.in=.Machine$double.eps,tol.out=.001)\nabline(v=x.valley,col=2)\n\n\nfindValley<-function(dens,stepSize=1,n=5,tol.in=.Machine$double.eps,tol.out=.001)\n{\n  i<-seq(stepSize+1,length(dens$x)-stepSize,stepSize)\n  i.plus<-i+1\n  i.minus<-i-1\n  ind.max.in<-i[dens$y[i]-dens$y[i.minus]< -tol.in & dens$y[i]-dens$y[i.plus]< -tol.in]\n  # Remove the tails\n  ind.max.in<-ind.max.in[ind.max.in<length(dens$x)-n*stepSize & ind.max.in>n*stepSize]\n  # Second condition\n  i.plus<-ind.max.in+n*stepSize\n  i.minus<-ind.max.in-n*stepSize\n  ind.max.out<-ind.max.in[dens$y[ind.max.in]-dens$y[i.minus]< -tol.out & dens$y[ind.max.in]-dens$y[i.plus]< -tol.out]\n  \n  dens$x[ind.max.out]\n}",
+    "created" : 1340058753696.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3279511388",
+    "id" : "FFAF127C",
+    "lastKnownWriteTime" : 1340062851,
+    "path" : "~/Dropbox/Presentations/HIPC/R/test.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

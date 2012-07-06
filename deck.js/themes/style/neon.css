@@ -32,6 +32,14 @@
   text-shadow: 0 0 50px #fff, 0 0 2px #fff;
 }
 
+.deck-container .slide h1 .overlay {
+  font-size: 80%;
+  color: #fff;
+  font-weight: normal;
+  font-weight: 100;
+  text-shadow: 0 0 50px #fff, 0 0 2px #fff;
+}
+
 .deck-container .slide h2 {
   color: #1F78B4;
   border-bottom-color: #ccc;
@@ -145,11 +153,11 @@
 
 
 
-.deck-container .slide blue{
+.deck-container .slide red{
   color: #E31A1C;
 }
 
-.deck-container .slide red{
+.deck-container .slide blue{
   color: #1F78B4;
 }
 

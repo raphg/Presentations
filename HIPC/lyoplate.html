@@ -254,22 +254,77 @@ Lead by Hoden Maecker and Phil McCoy</p>
 </div>
 </section>
 
-<section class="slide" id="Preliminary-results">
-<h2>Preliminary results</h2>
+<section class="slide" id="Preliminary-results-Variance">
+<h2>Preliminary results: Variance</h2>
+<div class="spanhalf">
+<div class="grey">
+<img src="./figures/varplotTcells.png" alt="Variance-T-cell" align="left" height="600">
+</div>
+Smaller is better!
+</div>
+<div class="spanhalf">
+<ul>
+<li><h4>Three donors, Two replicates per donor</h4></li>
+<li><h4>Two centers (Stanford and Miami)</h4></li>
+<li><h4>Two automated gating methods: flowCore and flowDensity</h4></li>
+<li><h4>10 populations (terminal nodes of gating tree)</h4></li>
+<li><h4>Population estimates are corrected for center and donor variability</h4></li>
+</ul>
+<div class="slide">
+<h4><red>Variance of automated population estimates are comparable if not smaller (<em>e.g.</em> Activated CD4+)</red></h4>
+</div>
+</div>
 </section>
 
+<section class="slide" id="Preliminary-results-Bias">
+<h2>Preliminary results: Bias</h2>
+<div class="spanhalf">
+<div class="grey">
+<img src="./figures/biastcells.png" alt="Bias-T-cell" align="left" height="600">
+</div>
+Smaller is better!
+</div>
+<div class="spanhalf">
+<ul>
+<li><h4>Three donors, Two replicates per donor</h4></li>
+<li><h4>Two centers (Stanford and Miami)</h4></li>
+<li><h4>Two automated gating methods: flowCore and flowDensity</h4></li>
+<li><h4>10 populations (terminal nodes of gating tree)</h4></li>
+<li><h4>Population estimates are corrected for center and donor variability</h4></li>
+</ul>
+<div class="slide">
+<ul>
+<h4><red>Very small bias, less than .2% for flowCore!</red></h4>
+</ul>
+</div>
+</div>
+</section>
+
+
 <section class="slide" id="Summary">
-<h2>Summary</h2>
+<h2>Summary and future Work</h2>
+<ul>
+<li>Infrastructure for automated data analysis</li>
+<ul>
+<li>Compensation, Transformation, Gating</li>
+<li>Assessment of gated data (manual <em>vs.</em> automated)</li>
+<li>Evaluation of gating strategies (<em>e.g.</em> plasmablast cells start on CD20- or CD19+?)</li>
+</ul>
+<li>FlowCAP</li>
+<ul>
+<li>Preparation of CYTO-TROL data</li>
+<li>Consensus gates (One central gating scheme approved by everyone)</li>
+<li>Release data on Aug 1</li>
+</ul>
+</ul>
 </section>
 
 <section class="slide" id="Acknowledgments">
 <h2>Acknowledgements</h2>
 <div class="spanthird">
-<h3>Our lab</h3>
+<h3>Gottardo lab</h3>
 <ul>
-<li>Greg Finak</li>
-<li>Mike Jiang</li>
-<li>Leo Dashevkiy</li>
+<li>Greg Finak, Mike Jiang, Leo Dashevkiy</li>
 </ul>
 </div>
 <div class="spanthird">
@@ -292,10 +347,10 @@ Lead by Hoden Maecker and Phil McCoy</p>
 <h3>FlowCAP members</h3>
 </div>
 <div class="spanthird">
-<h3>NIH/NIAID</h3>
+<h3>NIAID/NIBIB</h3>
 <ul>
-<li>U19</li>
-<li>U19</li>
+<li>U19 AI089986</li>
+<li>R01 EB008400 </li>
 </ul>
 </div>
 </div>

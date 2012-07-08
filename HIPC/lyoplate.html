@@ -101,7 +101,7 @@ Founded by Ryan Brinkman, Raphael Gottardo and Richard Scheuermann</p>
 <div class="span">
 <h3>FITMaN/Lyoplate project</h3>
 <p><em>Lyophilized antibody plates (lyoplate) and standard (FITMaN) marker panels</em><br />
-Lead by Hoden Maecker and Phil McCoy</p>
+Lead by Holden Maecker and Phil McCoy</p>
 <div id="FITMaN-leaders" class="spanthird">
 <div class="grey">
 <img src="./figures/Holden.jpg" alt="Holden" align="left" height="150">
@@ -128,8 +128,8 @@ Lead by Hoden Maecker and Phil McCoy</p>
 </div>
 <div class="span">
 <ul>
-<li class="slide"><h4>Standard sample handling and instrument setup</h4></li>
-<li class="slide"><h4>Central analysis by one or a few coordinated experts</h4></li>
+<li class="slide" id="Lyoplate-data"><h4>Standard sample handling and instrument setup</h4></li>
+<li class="slide" id="Lyoplate-data"><h4>Central analysis by one or a few coordinated experts</h4></li>
 </ul>
 </div>
 </section>
@@ -137,15 +137,15 @@ Lead by Hoden Maecker and Phil McCoy</p>
 <section class="slide" id="Goals">
 <h2>Overall goals</h2>
 <ul>
-<li class="slide" id="Goals-1"><h3>Highly reproducible assay platform and analysis strategy</h3>
+<li><h3>Highly reproducible assay platform and analysis strategy</h3>
 <ul>
-<li><h5>Develop automated methods for gating specific, pre–defined cell populations and measuring the bias and variability of these methods relative to manual gating, which defines current best practices</h5></li>
+<li><h5>Develop automated methods for gating specific pre-defined cell populations</h5></li>
 <li><h5>Characterize the effects of different gating (manual and automated) methods on the intra–assay and inter–assay variability</h5></li>
 <li><h5>Assess the change in variability when gating instructions provided to analysts are vague <em>vs.</em> when instructions are clear</h5></li>
-<li><h5>Compare the inter–assay variability when using liquid vs. lyophilized reagents (for some centers)</h5></li>
+<li><h5>Compare the inter-assay variability when using liquid <em>vs.</em> lyophilized reagents (for some centers)</h5></li>
 </ul>
 </li>
-<li class="slide" id="Goals-2"><h3>Leverage FlowCAP</h3>
+<li class="slide" id="Goals"><h3>Leverage FlowCAP</h3>
 <ul>
 <li><h5>Once data are "cleaned" and validated, they will be released on the FlowCAP website (Aug 1)</h5></li>
 </ul>
@@ -164,7 +164,7 @@ Lead by Hoden Maecker and Phil McCoy</p>
 <li><h4>Use of a linear mixed model to estimate technical and biological variability</h4></li>
 </ul>
 </li>
-<li class="slide" id="Evaluation-F-measures"><h3>Comparison of manual and automated gates using F-measures</h3>
+<li class="slide" id="Evaluation"><h3>Comparison of manual and automated gates using F-measures</h3>
 <ul>
 <li><h5>Overlap between manual and automated gates</h5></li>
 </ul>
@@ -173,13 +173,12 @@ Lead by Hoden Maecker and Phil McCoy</p>
 </section>
 
 <section class="slide" id="flowWorkspace">
-<h2>flowWorkspace 2.0: Open access to gate definitions and transformations</h2>
+<h2>flowWorkspace 2.0: Open access to gated data!</h2>
 <ul>
 <li><h4>Read and import FlowJo workspaces in R (Package available from Bioconductor)</h4></li>
 <li><h4>New in 2.0 (Supported by this IOF)</h4></li>
 <ul>
-<li>Parsing of Windows and Mac FlowJo versions, Diva coming soon</li>
-<li>Huge performance improvement (re-written in C++)</li>
+<li>Parsing of Windows and Mac FlowJo versions (Diva coming soon), and huge performance improvement (re-written in C++)</li>
 </ul>
 </ul>
 <div class="spanhalf">
@@ -202,9 +201,9 @@ Lead by Hoden Maecker and Phil McCoy</p>
 
 <section class="slide" id="Manual-to-Automated">
 <h2>Going from manual to data driven gate definition</h2>
-<h3 class="slide" id="Manual-to-Automated-1">Translate domain expert knowledge into statistical concepts</h3>
+<h3>Translate domain expert knowledge into statistical concepts</h3>
 <div class="spanhalf">
-<div class="slide" id="Manual-to-Automated-2">
+<div class="slide" id="Manual-to-Automated">
 <h4>Easy</h4>
 <div class="grey">
 <a class="fancybox-button" rel="fancybox-button" href="./figures/Tcell-Stanford-flowWorkspace.png"><img src="./figures/Tcell-Stanford-flowWorkspace.png" alt="Easy-Gate" align="left" height="500"></a>
@@ -212,7 +211,7 @@ Lead by Hoden Maecker and Phil McCoy</p>
 </div>
 </div>
 <div class="spanhalf">
-<div class="slide" id="Manual-to-Automated-3">
+<div class="slide" id="Manual-to-Automated">
 <div class="grey">
 <h4>Harder</h4>
 <a class="fancybox-button" rel="fancybox-button" href="./figures/Tcell-Stanford-flowWorkspace-single12.png"><img src="./figures/Tcell-Stanford-flowWorkspace-single12.png" alt="Hard-Gate" align="left" height="500"></a>
@@ -239,7 +238,7 @@ Lead by Hoden Maecker and Phil McCoy</p>
 </div>
 </section>
 
-<section class="slide" id="Manual-vs-Automated">
+<section class="slide" id="Manual-vs-Automated-Activated">
 <h2>Comparison of manual and data-driven gates</h2>
 <h3>CD4+ activated T-cell gates</h3>
 <div class="spanhalf">
@@ -261,8 +260,10 @@ Lead by Hoden Maecker and Phil McCoy</p>
 <div class="spanhalf">
 <div class="grey">
 <img src="./figures/varplotTcells.png" alt="Variance-T-cell" align="left" height="600">
+<div class="span">
+(<em>Smaller is better!</em>)
 </div>
-Smaller is better!
+</div>
 </div>
 <div class="spanhalf">
 <ul>
@@ -273,7 +274,9 @@ Smaller is better!
 <li><h4>Population estimates are corrected for center and donor variability</h4></li>
 </ul>
 <div class="slide" id="Preliminary-results-Variance">
-<h4><red>Variance of automated population estimates are comparable if not smaller (<em>e.g.</em> Activated CD4+)</red></h4>
+<ul>
+<h4><red>Variance of automated population estimates are comparable if not smaller (<em>e.g.</em>, Activated CD4+)</red></h4>
+</ul>
 </div>
 </div>
 </section>
@@ -284,7 +287,9 @@ Smaller is better!
 <div class="grey">
 <img src="./figures/biastcells.png" alt="Bias-T-cell" align="left" height="600">
 </div>
-Smaller is better!
+<div class="span">
+(<em>Smaller is better!</em>)
+</div>
 </div>
 <div class="spanhalf">
 <ul>
@@ -304,21 +309,34 @@ Smaller is better!
 
 
 <section class="slide" id="Summary">
-<h2>Summary and future Work</h2>
+<h2>Summary and future work</h2>
+<div class="spanhalf">
 <ul>
-<li>Infrastructure for automated data analysis</li>
+<li><h3>Infrastructure for automated data analysis</h3></li>
 <ul>
-<li>Compensation, Transformation, Gating</li>
-<li>Assessment of gated data (manual <em>vs.</em> automated)</li>
-<li>Evaluation of gating strategies (<em>e.g.</em> plasmablast cells start on CD20- or CD19+?)</li>
+<li><h4>Compensation, Transformation, Gating</h4></li>
+<li><h4>Evaluation of computational algorithms</h4></li>
+<li><h4>Evaluation of gating strategies (<em>e.g.</em>, plasmablast cells start on CD20- or CD19+?)</h4></li>
 </ul>
-<li>FlowCAP</li>
+<li><h3>FlowCAP 3</h3></li>
 <ul>
-<li>Preparation of CYTO-TROL data</li>
-<li>Consensus gates (One central gating scheme approved by everyone)</li>
-<li>Release data on Aug 1</li>
+<li><h4>Preparation of CYTO-TROL data</h4></li>
+<li><h4>Consensus gates</h4></li>
+<li><h4>Release data on Aug 1</h4></li>
 </ul>
 </ul>
+</div>
+<div class="spanhalf">
+<ul>
+<li><h3>Interface for analysis</h3></li>
+<ul>
+<li><h4>Web interface, leverage R/Bioconductor via Rserve</h4></li>
+<li><h4>Gating template for each marker panel</h4></li>
+<li><h4>Visualization of raw and gated data</h4></li>
+<li><h4>Other features? (<em>e.g.</em>, quality control)</h4></li>
+</ul>
+</ul>
+</div>
 </section>
 
 <section class="slide" id="Acknowledgments">
@@ -343,16 +361,18 @@ Smaller is better!
 </div>
 <div class="span">
 <div class="spanthird">
-<h3>HIP-C members</h3>
+<h3>HIPC members</h3>
+<h3>FOCiS</h3>
+
 </div>
 <div class="spanthird">
 <h3>FlowCAP members</h3>
+<h3>FICCS</h3>
 </div>
 <div class="spanthird">
 <h3>NIAID/NIBIB</h3>
 <ul>
-<li>U19 AI089986</li>
-<li>R01 EB008400 </li>
+<li>U19 AI089986, R01 EB008400</li>
 </ul>
 </div>
 </div>

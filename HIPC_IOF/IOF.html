@@ -83,24 +83,24 @@ Project leader: Raphael Gottardo
 
 
 <!-- Title slide -->
-<section class="slide" id="Specific Aims">
+<section class="slide" id="P1 - Specific Aims">
 <h2>Specific Aims</h2>
-<ol>
+<ul>
 <li>
-<h3>Identify and prioritize data analysis use cases, and provide analytical solutions</h3>
+<h3>SA1. Identify and prioritize data analysis use cases, and provide analytical solutions</h3>
 <h5>Comprehensive gating of all cell subsets defined within specific marker panels (T, B, Treg, etc.)</h5>
 </li>
 <li>
-<h3>Critical assessment of data processing algorithms using FITMaN lyoplate data through the FlowCAP project</h3>
+<h3>SA2. Critical assessment of data processing algorithms using FITMaN lyoplate data through the FlowCAP project</h3>
 </li>
 <li>
-<h3>Provide a user-friendly interface implementing the data analysis pipelines (Year 2)</h3>
+<h3>SA3. Provide a user-friendly interface implementing the data analysis pipelines (Year 2)</h3>
 </li>
-</ol>
+</ul>
 </section>
 
-<section class="slide" id="Accomplishments to date">
-<h2>Tools </h2>
+<section class="slide" id="Overview of tools">
+<h2>Overview of current tools</h2>
 <ul>
 <li>
 <h3>R/Bioconductor</h3>
@@ -108,7 +108,7 @@ Project leader: Raphael Gottardo
 <li><h5>flowWorkspace 2.0 for parsing workspaces (flowJo Mac and Windows)</h5></li>
 <li><h5>flowViz for visualizing flow cytometry data (including gates) conditioning on metadata</h5></li>
 <li><h5>Package for defining workflows (specific for each marker panel)</h5></li>
-<li><h5>Available from Bioconductor or GitHub</h5></li>
+<li><h5>Available from Bioconductor and/or GitHub</h5></li>
 </ul>
 </li>
 <li><h3>Mixed effect models for accessing automated results (against manual consensus)</h3>
@@ -119,12 +119,27 @@ Project leader: Raphael Gottardo
 </ul>
 </section>
 
+<section class="slide" id="Towards a web interface">
+<h2>Towards a web interface</h2>
+<ul>
+<li><h3>LabKey</h3></li>
+<ul>
+<li><h5>Robust platform for managing immunological data</h5>
+Used by CHAVI, HVTN, CAVD, ITN</li>
+<li><h5>R and JavaScript APIs</h5></li>
+<li><h5>Existing flow cytometry module</h5></li>
+<li><h5>Open source!</h5></li>
+</ul>
+<li><h3>Many core improvements to our Bioconductor pipeline: ncdfFlow, flowViz</h3>
+</li>
+</ul>
+</section>
+
 
 <!-- Slide -->
 <section class="slide" id="Project 2">
 <h1>	
-<div class="title">Standardization of Flow Cytometry Data Analysis using Lyoplates and FITMaN Marker Panels
-</div>
+<div class="title">Benchmarking and standardizing analysis tools for high dimensional single cell assays</div>
 	
 <br />
 
@@ -135,38 +150,89 @@ Project leader: Raphael Gottardo
 	</ul>
 	Co-Investigators:
 	<ul>
-	<li>HIPC: David Hafler (Yale), Holden Maecker (Stanford)</li>	
-	<li>non-HIPC: Ryan Brinkman (BCCA), Richard Scheuermann (JCVI)</li>	
+	<li>HIPC: Steve de Rosa (FHCRC), Nick Haining (Emory), Holden Maecker (Stanford)</li>	
 </ul>
-</div>
-<div class="url">
-<a href="http://bit.ly/NcLjmX">http://bit.ly/NcLjmX</a>
-</h1>
 </div>
 </section>
 
-<section class="slide" id="FITMaN/FlowCAP">
-<div class="span">
-<h2>History and motivation: two complementary projects</h2>	
-<h3>FlowCAP</h3>
-<p><em>Flow Cytometry: Critical Assessment of Population Identification Methods</em><br />
-Founded by Ryan Brinkman, Raphael Gottardo and Richard Scheuermann</p>
-<div id="FlowCAP-leaders" class="spanthird">
-<div class="grey">
-<img src="./figures/gottardo.jpg" alt="Raphael" align="left" height="150">
-<img src="./figures/Brinkman.jpg" alt="Ryan" align="left" height="150">
-<img src="./figures/scheuermann.jpg" alt="Richard" align="left" height="150">
-</div>
-</div>
-<div id="FlowCAP-pros" class="span2third">
+<!-- Title slide -->
+<section class="slide" id="P2 - Specific Aims">
+<h2>Specific Aims</h2>
 <ul>
-<li><h5>Objectively test and compare computational methods</h5></li>
-<li><h5>Guidance for end users about appropriate use and applications</h5></li>
+<li>
+<h3>SA1. Identify and prioritize assay platforms and use cases</h3>
+<h5>Flow cytometry, CyTOF, Fluidgm</h5>
+</li>
+<li>
+<h3>SA2. Survey and quantitatively compare methods for single cell data analysis</h3>
+</li>
+<li>
+<h3>SA3. Develop new analytic and visualization approaches to characterize and quantify heterogeneity in complex mixtures of cells</h3>
+</li>
+<li>
+<h3>SA4. Implement the best analytical solutions into R packages</h3></li>
 </ul>
-</div>
+</section>
+
+<section class="slide" id="Why single cell?">
+<h2>Why single cell?</h2>
+<ul>
+<li>
+<h4>The immune system is composed of many small and functionally distinct cell subsets that can only be measured accurately using single cell assays</h4>
+</li>
+<li>
+<h4>The characterization of these small cell subsets requires sophisticated bioinformatics tools</h4>
+</li>
+<li>
+<h4>Higher dimensional assays</h4>
+<ul>
+<li><h5>Flow cytometry can get up to 8-10 functional markers</h5></li>
+<li><h5>CyTOF 50+ markers</h5></li>
+<li><h5>Fluidigm 96 genes</h5></li>
+</ul>
+<h4>With 50 markers we have many putative cell subsets $$2^{50}=1125899906842624$$</h4>
+</li>
+</ul>
+</section>
+
+<section class="slide" id="Short term goals">
+<h2>Short term goals</h2>
+<ul>
+<li>
+<h4>Work with HIPC investigators to define use cases and gather datasets</h4>
+</li>
+<li>
+<h4>Leverage of existing MIMOSA (Mixture MOdel for Single Assays) framework</h4>
+Bayesian hierarchical Dirichlet-Multinomial mixture model that uses prior information to cope with the high dimensionality
+</li>
+<li>
+<h4>Leverage our flow cytometry visualization framework</h4>
+<ul>
+<li><h5>Single cell assay data model</h5></li>
+<li><h5>Stores data and metadata in a single object </h5></li>
+<li><h5>Use reshape and ggplot2 for plotting</h5></li>
+</ul>
+</li>
+</ul>
+</section>
+
+
+<section class="slide" id="Short term goals">
+<h2>MIMOSA on ICS data</h2>
+<p>
+<strong>HVTN 065:</strong> GeoVax DNA and MVA vaccines in a prime-boost regimen, with 120 individuals (98 vaccines and 20 placebo recipients).
+We analyzed the vaccinees (n=98) at the day 0 and day 182 (the primary endpoint) time points as a pooled data set.</p>
+<div class="grey">
+<a class="fancybox-button" rel="fancybox-button" href="./figures/MIMOSA_ICS.png"><img src="./figures/MIMOSA_ICS.png" alt="MIMOSA_ICS" align="left" height="400"></a>
 </div>
 </section>
 
+<section class="slide" id="Short term goals">
+<h2>MIMOSA on Fluidigm data</h2>
+<div class="grey">
+<a class="fancybox-button" rel="fancybox-button" href="./figures/MIMOSA_Fluidigm.png"><img src="./figures/MIMOSA_Fluidigm.png" alt="MIMOSA_Fluidigm" align="left" height="400"></a>
+</div>
+</section>
 
 
 <!-- deck.navigation snippet -->
